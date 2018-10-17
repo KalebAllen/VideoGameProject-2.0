@@ -10,6 +10,11 @@ import UIKit
 
 class GameList: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
+    
+    
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return GameManager.sharedInstance.getGameCount()
     }
