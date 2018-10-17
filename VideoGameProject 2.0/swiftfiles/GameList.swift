@@ -11,7 +11,7 @@ import UIKit
 class GameList: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 15
+        return GameManager.sharedInstance.getGameCount()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -22,15 +22,13 @@ class GameList: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let cell =
             tableView.dequeueReusableCell(withIdentifier: "gameCell") as! GameTableViewCell
         
-        let currentGame = gameArray[indexPath.row]
+        let currentGame = GameManager.sharedInstance.getGame(at: indexPath.row)
         
         cell.TitleLabel.text = currentGame.title
         cell.GenreLabel.text = currentGame.title
         cell.RatingLabel.text = currentGame.title
         
     }
-    var gameArray = [Game(title: "Legend of Zelda", genre: "Open World", description: "", rating: "E")]
-    
     gameArray[0].checkedIn = false
     
     if currentGame.checkIn {
