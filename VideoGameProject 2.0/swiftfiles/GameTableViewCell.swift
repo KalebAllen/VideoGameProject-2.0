@@ -13,6 +13,7 @@ class GameTableViewCell: UITableViewCell {
     @IBOutlet weak var GenreLabel: UILabel!
     @IBOutlet weak var DueDateLable: UILabel!
     @IBOutlet weak var RatingLabel: UILabel!
+    @IBOutlet weak var statusView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,5 +25,4 @@ class GameTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

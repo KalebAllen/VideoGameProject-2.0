@@ -18,20 +18,34 @@ class GameList: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell")
-        cell?.textLabel?.text = "This is Game"
-        return cell!
+        let cell =
+            tableView.dequeueReusableCell(withIdentifier: "gameCell") as! GameTableViewCell
+        
+        let currentGame = gameArray[indexPath.row]
+        
+        cell.TitleLabel.text = currentGame.title
+        cell.GenreLabel.text = currentGame.title
+        cell.RatingLabel.text = currentGame.title
+        
+    }
+    var gameArray = [Game(title: "Legend of Zelda", genre: "Open World", description: "", rating: "E")]
+    
+    gameArray[0].checkedIn = false
+    
+    if currentGame.checkIn {
+    cell.statusView.backgroundColor = UIColor.green
+    } else {
+    cell.statusView.backgroundColor = UIColor.red
     }
     
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
-
-
+    @IBAction func unwindToGameList(segue: UIStoryboardSegue) { }
+    
 }
 
