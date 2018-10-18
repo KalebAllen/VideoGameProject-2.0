@@ -12,7 +12,7 @@ class Game {
     var genre: String
     var desription: String
     var rating: String
-    var dueDate: Data?
+    var dueDate: Date?
     var checkIn: Bool = true
     
     init(title: String, genre: String, description: String, rating: String) {

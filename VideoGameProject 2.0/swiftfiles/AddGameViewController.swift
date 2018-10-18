@@ -50,12 +50,12 @@ class AddGameViewController: UIViewController, UIPickerViewDataSource,UIPickerVi
     
     
     @IBAction func SubmmitButtontapped(_ sender: Any) {
-        guard let title = GameDiscription.text, title.trimmingCharacters(in: .whitespacesAndNewlines) != "", let GameDiscription = gameDiscriptionTextView.text, GameDiscription.trimmingCharacters(in: .whitespacesAndNewlines) != "" else {
+        guard let title = GameDiscription.text, title.trimmingCharacters(in: .whitespacesAndNewlines) != "", let GameDiscription = GameDiscription.text, GameDiscription.trimmingCharacters(in: .whitespacesAndNewlines) != "" else {
             return
         }
         var rating: String
         
-        switch GenrePicker.selectedSegmentIndex {
+        switch RatingSlector.selectedSegmentIndex {
         case 0:
             rating = "E"
         case 1:

@@ -33,13 +33,24 @@ class GameList: UIViewController, UITableViewDelegate, UITableViewDataSource {
         cell.GenreLabel.text = currentGame.title
         cell.RatingLabel.text = currentGame.title
         
-    }
-    gameArray[0].checkedIn = false
-    
-    if currentGame.checkIn {
-    cell.statusView.backgroundColor = UIColor.green
-    } else {
-    cell.statusView.backgroundColor = UIColor.red
+        if currentGame.checkIn {
+            cell.statusView.backgroundColor = UIColor.green
+        } else {
+            cell.statusView.backgroundColor = UIColor.red
+        }
+        if let  duedate = currentGame.dueDate {
+            cell.DueDateLable.text = formatDate(duedate)
+        } else {
+            cell.DueDateLable.text = ""
+        }
+        
+        if currentGame.checkIn {
+            cell.statusView.backgroundColor = UIColor.green
+        } else {
+            cell.statusView.backgroundColor = UIColor.red
+            
+        }
+        return cell
     }
     
     
@@ -49,6 +60,5 @@ class GameList: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
     }
     @IBAction func unwindToGameList(segue: UIStoryboardSegue) { }
-    
 }
 

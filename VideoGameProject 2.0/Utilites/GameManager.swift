@@ -12,12 +12,12 @@ class GameManager {
     //shareed instance of the GameManager
     static let sharedInstance = GameManager()
     
-    //makign this privet
+    //creating a private initializer so that no instance of this class can be made anywhere else
     private init() {
-        
+        gameArray[0].dueDate = Date()
     }
     //list of all the games
-     private var gameArray = [Game(title: "Legend of Zelda", genre: "Open World", description: "", rating: "E")]
+     private var gameArray = [Game(title: "Legend of Zelda Breath of the Wild", genre: "Open World", description: "", rating: "E")]
     
     //function to get the number of games we have
     func getGameCount() -> Int {
