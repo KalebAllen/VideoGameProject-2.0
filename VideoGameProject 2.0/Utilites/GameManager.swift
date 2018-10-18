@@ -17,7 +17,7 @@ class GameManager {
         gameArray[0].dueDate = Date()
     }
     //list of all the games
-    private var gameArray = [Game(title: "Legend of Zelda Breath of the Wild", genre: "Open World", description: "", rating: "E")]
+    private var gameArray = [Game(title: "Legend of Zelda Breath of the Wild", genre: "Open World", description: "", rating: "E"),Game(title: "Fallout 4", genre: "Open World", description: "", rating: "M")]
     
     //function to get the number of games we have
     func getGameCount() -> Int {
@@ -33,6 +33,19 @@ class GameManager {
     }
     func removeGame(at index: Int) {
         gameArray.remove(at: index)
+    }
+    func checkGameInOrOut(at index: Int) {
+        let gameForIndex = gameArray[index]
+        gameArray[index].checkIn = !gameArray[index].checkIn
+        
+        if gameForIndex.checkIn {
+            //remove any duedate from game
+            gameForIndex.dueDate = nil
+        } else {
+            //adds a due date to game
+            gameForIndex.dueDate = Calendar.current.date(byAdding: .day, value: 24, to:Date())
+        }
+        
     }
 }
 
