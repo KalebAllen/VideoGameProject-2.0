@@ -47,7 +47,16 @@ class AddGameViewController: UIViewController, UIPickerViewDataSource,UIPickerVi
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return genres[row]
     }
-    
+    func showErrorAlert() {
+        let alertController = UIAlertController(title: "ERROR", message: "you must enter a title and a discription for the game", preferredStyle: .actionSheet)
+        let closeAction = UIAlertAction(title: "Close", style: .default) {
+            _ in
+            self.GameTitle.text = ""
+            self.GameDiscription.text = ""
+        }
+        alertController.addAction(closeAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
     
     @IBAction func SubmmitButtontapped(_ sender: Any) {
         guard let title = GameDiscription.text, title.trimmingCharacters(in: .whitespacesAndNewlines) != "", let GameDiscription = GameDiscription.text, GameDiscription.trimmingCharacters(in: .whitespacesAndNewlines) != "" else {

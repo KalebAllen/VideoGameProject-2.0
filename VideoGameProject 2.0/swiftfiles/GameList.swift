@@ -53,6 +53,17 @@ class GameList: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        //This allows us to return an array of actions that the row will have (if any)
+        
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (_, _) in
+            // remove the game from current index
+            GameManager.sharedInstance.removeGame(at: indexPath.row)
+            //deletes row from current index path
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        return [deleteAction]
+    }
     
     
     override func viewDidLoad() {

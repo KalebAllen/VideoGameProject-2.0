@@ -17,7 +17,7 @@ class GameManager {
         gameArray[0].dueDate = Date()
     }
     //list of all the games
-     private var gameArray = [Game(title: "Legend of Zelda Breath of the Wild", genre: "Open World", description: "", rating: "E")]
+    private var gameArray = [Game(title: "Legend of Zelda Breath of the Wild", genre: "Open World", description: "", rating: "E")]
     
     //function to get the number of games we have
     func getGameCount() -> Int {
@@ -30,6 +30,9 @@ class GameManager {
     //adds a new game
     func addGame(game:Game) {
         gameArray.append(game)
+    }
+    func removeGame(at index: Int) {
+        gameArray.remove(at: index)
     }
 }
 
