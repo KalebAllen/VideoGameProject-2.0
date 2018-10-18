@@ -79,7 +79,7 @@
                                     <outlet property="GenreLabel" destination="HXa-KK-9yS" id="kAA-xu-2Aw"/>
                                     <outlet property="RatingLabel" destination="nw9-6d-8tA" id="4b8-jc-8mL"/>
                                     <outlet property="TitleLabel" destination="FUv-gI-TlG" id="fnM-F2-rJH"/>
-                                    <segue destination="pgK-EG-3XO" kind="show" id="buD-un-QAg"/>
+                                    <segue destination="pgK-EG-3XO" kind="show" identifier="GameDetailsScreen" id="buD-un-QAg"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -95,6 +95,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="Qzp-dM-l7s" kind="show" identifier="showEditGameScreen" id="OB8-Fb-Mrh"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sgy-w4-oEg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -236,7 +239,15 @@
                 <viewControllerPlaceholder storyboardName="GameDetails" id="pgK-EG-3XO" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vzR-7B-szK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-350" y="661"/>
+            <point key="canvasLocation" x="-639" y="649"/>
+        </scene>
+        <!--EditGames-->
+        <scene sceneID="qzV-bR-Am7">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="EditGames" storyboardName="EditGames" id="Qzp-dM-l7s" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I1r-hf-8I8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-204" y="649"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="t3N-uw-YJK">

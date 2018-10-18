@@ -10,9 +10,14 @@ import UIKit
 
 class GameList: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var currentGame: Game!
     
-    
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as?
+            EditGameViewController {
+            destination.gameToEdit = currentGame
+        }
+    }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -70,6 +75,11 @@ class GameList: UIViewController, UITableViewDelegate, UITableViewDataSource {
             GameManager.sharedInstance.checkGameInOrOut(at: indexPath.row)
             tableView.reloadRows(at: [indexPath], with: .fade)
         }
+        let showEditScreenAction = UITableViewRowAction(style: .normal, title: "Edit") { _, _ in
+            self.currentGame = GameManager.sharedInstance.getGame(at: indexPath.row)
+            self.performSegue(withIdentifier: "showGameEditGameScreen", sender: self)
+        }
+        showEditScreenAction.backgroundColor = UIColor.orange
         return [checkOutOrInAction, deleteAction]
     }
     
