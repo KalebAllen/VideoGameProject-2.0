@@ -86,6 +86,6 @@ class AddGameViewController: UIViewController, UIPickerViewDataSource,UIPickerVi
         
         GameManager.sharedInstance.addGame(game: newGame)
         
-        self.performSegue(withIdentifier: "AddGameViewController", sender: self)
+        self.performSegue(withIdentifier: "unwindToGameList", sender: self)
     }
 }

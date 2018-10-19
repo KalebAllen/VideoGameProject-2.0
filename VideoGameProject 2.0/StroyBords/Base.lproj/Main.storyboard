@@ -12,13 +12,13 @@
         <!--Video Game Libary 2.0-->
         <scene sceneID="Lss-RI-Vim">
             <objects>
-                <tableViewController id="HKp-ym-bea" sceneMemberID="viewController">
+                <tableViewController id="HKp-ym-bea" customClass="GameList" customModule="VideoGameProject_2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="111" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Kqg-U0-PKb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameCell" rowHeight="111" id="WXO-yx-L1m" customClass="GameTableViewCell" customModule="VideoGameProject_2_0" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="gameCell" rowHeight="111" id="WXO-yx-L1m" customClass="GameTableViewCell" customModule="VideoGameProject_2_0" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="111"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WXO-yx-L1m" id="ANg-Cu-R9o">
@@ -31,7 +31,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Genre Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXa-KK-9yS">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXa-KK-9yS">
                                             <rect key="frame" x="0.0" y="76" width="93" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -53,7 +53,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nw9-6d-8tA">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nw9-6d-8tA">
                                             <rect key="frame" x="328" y="86" width="14.5" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -61,24 +61,34 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="nFh-fH-bYF" secondAttribute="bottom" id="0Zy-XV-p1c"/>
-                                        <constraint firstItem="FUv-gI-TlG" firstAttribute="top" secondItem="ANg-Cu-R9o" secondAttribute="top" id="BJm-B1-65a"/>
-                                        <constraint firstItem="nFh-fH-bYF" firstAttribute="top" secondItem="ANg-Cu-R9o" secondAttribute="top" id="FPY-l0-e7V"/>
-                                        <constraint firstItem="nFh-fH-bYF" firstAttribute="leading" secondItem="M2m-qt-5ee" secondAttribute="trailing" constant="8" id="Onv-pc-L5V"/>
-                                        <constraint firstAttribute="trailing" secondItem="nFh-fH-bYF" secondAttribute="trailing" id="d07-GN-cpc"/>
-                                        <constraint firstItem="M2m-qt-5ee" firstAttribute="top" secondItem="ANg-Cu-R9o" secondAttribute="topMargin" id="dAP-rj-G6N"/>
-                                        <constraint firstItem="HXa-KK-9yS" firstAttribute="leading" secondItem="ANg-Cu-R9o" secondAttribute="leading" id="nUt-iJ-boi"/>
-                                        <constraint firstItem="FUv-gI-TlG" firstAttribute="leading" secondItem="ANg-Cu-R9o" secondAttribute="leading" id="rhP-VR-W8b"/>
-                                        <constraint firstAttribute="bottom" secondItem="nw9-6d-8tA" secondAttribute="bottom" id="wI3-bA-bqL"/>
+                                        <constraint firstAttribute="trailing" secondItem="nFh-fH-bYF" secondAttribute="trailing" id="0Bu-89-GCh"/>
+                                        <constraint firstItem="M2m-qt-5ee" firstAttribute="leading" secondItem="FUv-gI-TlG" secondAttribute="trailing" constant="127.5" id="0fl-J7-rve"/>
+                                        <constraint firstItem="nFh-fH-bYF" firstAttribute="top" secondItem="ANg-Cu-R9o" secondAttribute="top" id="0oj-hv-8iV"/>
+                                        <constraint firstItem="nFh-fH-bYF" firstAttribute="leading" secondItem="nw9-6d-8tA" secondAttribute="trailing" constant="2.5" id="2I4-q1-3Wd"/>
+                                        <constraint firstItem="FUv-gI-TlG" firstAttribute="top" secondItem="ANg-Cu-R9o" secondAttribute="top" id="410-gi-ecg"/>
+                                        <constraint firstItem="M2m-qt-5ee" firstAttribute="top" secondItem="ANg-Cu-R9o" secondAttribute="topMargin" id="7Rt-Lf-Krb"/>
+                                        <constraint firstAttribute="bottom" secondItem="nw9-6d-8tA" secondAttribute="bottom" constant="3.5" id="96D-dN-KlS"/>
+                                        <constraint firstItem="M2m-qt-5ee" firstAttribute="leading" secondItem="FUv-gI-TlG" secondAttribute="trailing" constant="127.5" id="BLS-Zk-Gjm"/>
+                                        <constraint firstItem="nw9-6d-8tA" firstAttribute="top" secondItem="M2m-qt-5ee" secondAttribute="bottom" constant="54" id="I3c-K5-3wr"/>
+                                        <constraint firstItem="nFh-fH-bYF" firstAttribute="leading" secondItem="nw9-6d-8tA" secondAttribute="trailing" constant="2.5" id="NT6-Fi-Yli"/>
+                                        <constraint firstItem="nw9-6d-8tA" firstAttribute="top" secondItem="M2m-qt-5ee" secondAttribute="bottom" constant="54" id="UBx-nf-Acf"/>
+                                        <constraint firstAttribute="bottom" secondItem="nFh-fH-bYF" secondAttribute="bottom" id="XUG-0Z-aGT"/>
+                                        <constraint firstItem="FUv-gI-TlG" firstAttribute="leading" secondItem="ANg-Cu-R9o" secondAttribute="leading" id="c9j-Il-b4d"/>
+                                        <constraint firstItem="nw9-6d-8tA" firstAttribute="leading" secondItem="HXa-KK-9yS" secondAttribute="trailing" constant="235" id="cYU-Qv-6cP"/>
+                                        <constraint firstItem="nw9-6d-8tA" firstAttribute="leading" secondItem="HXa-KK-9yS" secondAttribute="trailing" constant="235" id="eaC-jV-HTR"/>
+                                        <constraint firstItem="nFh-fH-bYF" firstAttribute="leading" secondItem="M2m-qt-5ee" secondAttribute="trailing" constant="8" id="f0A-uY-uCD"/>
+                                        <constraint firstItem="HXa-KK-9yS" firstAttribute="top" secondItem="FUv-gI-TlG" secondAttribute="bottom" constant="47" id="gwM-Tt-9nJ"/>
+                                        <constraint firstItem="HXa-KK-9yS" firstAttribute="leading" secondItem="ANg-Cu-R9o" secondAttribute="leading" id="iWz-6s-acr"/>
+                                        <constraint firstItem="HXa-KK-9yS" firstAttribute="top" secondItem="FUv-gI-TlG" secondAttribute="bottom" constant="47" id="ov1-p0-uh8"/>
+                                        <constraint firstAttribute="bottom" secondItem="HXa-KK-9yS" secondAttribute="bottom" constant="13.5" id="xdk-r0-kat"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="BackGroundColor" destination="nFh-fH-bYF" id="aHh-7l-cqe"/>
-                                    <outlet property="CheckInCkeckOutColor" destination="nFh-fH-bYF" id="dlc-gB-Aax"/>
                                     <outlet property="DueDateLable" destination="M2m-qt-5ee" id="qdx-PG-kpG"/>
                                     <outlet property="GenreLabel" destination="HXa-KK-9yS" id="kAA-xu-2Aw"/>
                                     <outlet property="RatingLabel" destination="nw9-6d-8tA" id="4b8-jc-8mL"/>
                                     <outlet property="TitleLabel" destination="FUv-gI-TlG" id="fnM-F2-rJH"/>
+                                    <outlet property="statusView" destination="nFh-fH-bYF" id="n1E-bZ-1gM"/>
                                     <segue destination="pgK-EG-3XO" kind="show" identifier="GameDetailsScreen" id="buD-un-QAg"/>
                                 </connections>
                             </tableViewCell>
@@ -91,7 +101,7 @@
                     <navigationItem key="navigationItem" title="Video Game Libary 2.0" id="rCL-pf-i9R">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="gaU-Xc-DRW">
                             <connections>
-                                <segue destination="F83-4T-2f9" kind="show" identifier="AddNewGameSegue" customClass="AddGameViewController" customModule="VideoGameProject_2_0" customModuleProvider="target" id="MN8-Kc-vEz"/>
+                                <segue destination="F83-4T-2f9" kind="show" id="QSO-rW-RuE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -225,7 +235,7 @@
                         <outlet property="GameTitle" destination="QKk-7u-HOw" id="hCf-kC-f42"/>
                         <outlet property="GenrePicker" destination="YWv-JK-LRd" id="chl-se-p97"/>
                         <outlet property="RatingSlector" destination="QHU-Ek-Dga" id="mOS-u4-Cgu"/>
-                        <segue destination="7ri-5t-Wxc" kind="unwind" identifier="Unwind to Game List" unwindAction="unwindToGameListWithSegue:" id="6aB-cO-Jax"/>
+                        <segue destination="7ri-5t-Wxc" kind="unwind" identifier="unwindToGameList" unwindAction="unwindToGameListWithSegue:" id="6aB-cO-Jax"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7QU-Zu-H3d" userLabel="First Responder" sceneMemberID="firstResponder"/>
