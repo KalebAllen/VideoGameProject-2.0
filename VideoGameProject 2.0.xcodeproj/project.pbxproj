@@ -22,6 +22,7 @@
 		0B8A8D90217508AA004D7FC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B8A8D8E217508AA004D7FC2 /* LaunchScreen.storyboard */; };
 		0B9885B62177AB32009F4254 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9885B52177AB32009F4254 /* GameManager.swift */; };
 		0BC0B1902178C00E0032E415 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC0B18F2178C00E0032E415 /* Utilities.swift */; };
+		0BE04D01217E275C008A5F01 /* RealmSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE04D00217E275C008A5F01 /* RealmSwift.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		0B8A8D91217508AA004D7FC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B9885B52177AB32009F4254 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		0BC0B18F2178C00E0032E415 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		0BE04D00217E275C008A5F01 /* RealmSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmSwift.swift; sourceTree = "<group>"; };
 		37A75F6B6481C18045E7832B /* Pods_VideoGameProject_2_0.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoGameProject_2_0.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		632583CB1DCB0D9C1F8644F7 /* Pods-VideoGameProject 2.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoGameProject 2.0.release.xcconfig"; path = "Pods/Target Support Files/Pods-VideoGameProject 2.0/Pods-VideoGameProject 2.0.release.xcconfig"; sourceTree = "<group>"; };
 		A62F7A5BA8E8B1D645049A0B /* Pods-VideoGameProject 2.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoGameProject 2.0.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VideoGameProject 2.0/Pods-VideoGameProject 2.0.debug.xcconfig"; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				0B089CC92176649200896776 /* Games.swift */,
+				0BE04D00217E275C008A5F01 /* RealmSwift.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				0B089CC22176561700896776 /* GameTableViewCell.swift in Sources */,
 				0B2E8D33217914DF005C8004 /* EditGameViewController.swift in Sources */,
 				0B089CCA2176649200896776 /* Games.swift in Sources */,
+				0BE04D01217E275C008A5F01 /* RealmSwift.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
