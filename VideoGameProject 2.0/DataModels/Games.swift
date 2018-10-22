@@ -7,18 +7,13 @@
 //
 
 import Foundation
-class Game {
-    var title: String
-    var genre: String
-    var desription: String
-    var rating: String
-    var dueDate: Date?
-    var checkIn: Bool = true
-    
-    init(title: String, genre: String, description: String, rating: String) {
-        self.title = title
-        self.desription = description
-        self.genre = genre
-        self.rating = rating
-    }
+import RealmSwift
+
+class Game: Object {
+    @objc dynamic var title: String = ""
+    @objc dynamic var genre: String = ""
+    @objc dynamic var gameDesription: String = ""
+    @objc dynamic var rating: String = ""
+    @objc dynamic var dueDate: Date? = nil
+    @objc dynamic var checkIn: Bool = true
 }

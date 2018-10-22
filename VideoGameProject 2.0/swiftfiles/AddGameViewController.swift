@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class AddGameViewController: UIViewController, UIPickerViewDataSource,UIPickerViewDelegate {
     
@@ -77,17 +78,21 @@ class AddGameViewController: UIViewController, UIPickerViewDataSource,UIPickerVi
             rating = "AO"
         default:
             rating = "E"
-            
         }
+        
         let genre =
             genres[GenrePicker.selectedRow(inComponent: 0)]
         
-        let newGame = Game(title: title, genre: genre, description: description, rating: rating)
+        let newGame = Game()
+        newGame.title = title
+        newGame.gameDesription = GameDiscription
+        newGame.rating = rating
+        newGame.genre = genre
         
-        GameManager.sharedInstance.addGame(game: newGame)
+        GameManager.sharedInstance.addgame(game: newGame)
         
         self.performSegue(withIdentifier: "unwindToGameList", sender: self)
     }
-
-
+    
+    
 }
