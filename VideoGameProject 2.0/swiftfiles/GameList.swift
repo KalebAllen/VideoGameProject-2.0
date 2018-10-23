@@ -12,11 +12,12 @@ class GameList: UITableViewController {
     
     var currentGame: Game!
     
+    //swiping will bring up a menue
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
-    
+    //segue to edit game screen
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as?
             EditGameViewController {
@@ -24,15 +25,15 @@ class GameList: UITableViewController {
         }
     }
     
-    
+    //tells the number of games in the array
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return GameManager.sharedInstance.getGameCount()
     }
-    
+    //closes the menue
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
+    //tells weather a gmae is checked out or not
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =
             tableView.dequeueReusableCell(withIdentifier: "gameCell") as! GameTableViewCell

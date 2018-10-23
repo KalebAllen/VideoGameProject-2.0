@@ -8,7 +8,7 @@
 
 import Foundation
 import RealmSwift
-
+//setting up the Realm pod for use
 class Game: Object {
     @objc dynamic var title: String = ""
     @objc dynamic var genre: String = ""

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//edit game screen 
 class EditGameViewController: UIViewController {
 
     var gameToEdit: Game!

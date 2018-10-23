@@ -37,17 +37,19 @@ class AddGameViewController: UIViewController, UIPickerViewDataSource,UIPickerVi
      // Pass the selected object to the new view controller.
      }
      */
+    //lets the user pick the rating in the game
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    
+    //lets the user pick the genre of the game
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return genres.count
     }
-    
+    //filles in the rows in the picker view
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return genres[row]
     }
+    //thorws an error if the user left anything blank in the add game
     func showErrorAlert() {
         let alertController = UIAlertController(title: "ERROR", message: "you must enter a title and a discription for the game", preferredStyle: .actionSheet)
         let closeAction = UIAlertAction(title: "Close", style: .default) {
@@ -58,7 +60,7 @@ class AddGameViewController: UIViewController, UIPickerViewDataSource,UIPickerVi
         alertController.addAction(closeAction)
         self.present(alertController, animated: true, completion: nil)
     }
-    
+    //the function that trows therror screen
     @IBAction func SubmmitButtontapped(_ sender: Any) {
         guard let title = GameDiscription.text, title.trimmingCharacters(in: .whitespacesAndNewlines) != "", let GameDiscription = GameDiscription.text, GameDiscription.trimmingCharacters(in: .whitespacesAndNewlines) != "" else {
             return
@@ -79,7 +81,7 @@ class AddGameViewController: UIViewController, UIPickerViewDataSource,UIPickerVi
         default:
             rating = "E"
         }
-        
+        //stores the genre of game 
         let genre =
             genres[GenrePicker.selectedRow(inComponent: 0)]
         
