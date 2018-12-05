@@ -60,7 +60,7 @@ class AddGameViewController: UIViewController, UIPickerViewDataSource,UIPickerVi
         alertController.addAction(closeAction)
         self.present(alertController, animated: true, completion: nil)
     }
-    //the function that trows therror screen
+    //the function that throws the error screen
     @IBAction func SubmmitButtontapped(_ sender: Any) {
         guard let title = GameDiscription.text, title.trimmingCharacters(in: .whitespacesAndNewlines) != "", let GameDiscription = GameDiscription.text, GameDiscription.trimmingCharacters(in: .whitespacesAndNewlines) != "" else {
             return
